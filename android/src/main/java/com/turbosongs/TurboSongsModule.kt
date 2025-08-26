@@ -29,7 +29,7 @@ import java.util.Collections.addAll
 class TurboSongsModule internal constructor(context: ReactApplicationContext) :
   TurboSongsSpec(context) {
 
-  override fun getName(): String {
+  fun getName(): String {
     return NAME
   }
 
@@ -46,7 +46,7 @@ class TurboSongsModule internal constructor(context: ReactApplicationContext) :
   // Example method
   // See https://reactnative.dev/docs/native-modules-android
   @ReactMethod
-  override fun getAll(options: ReadableMap, promise: Promise) {
+  fun getAll(options: ReadableMap, promise: Promise) {
     if(!hasPermissions()){
       promise.reject("Permissions denied","Permissions denied")
       return
@@ -153,7 +153,7 @@ class TurboSongsModule internal constructor(context: ReactApplicationContext) :
   }
 
   @ReactMethod
-  override fun getAlbums(options: ReadableMap, promise : Promise) {
+  fun getAlbums(options: ReadableMap, promise : Promise) {
 
     if(!hasPermissions()){
       promise.reject("Permissions denied","Permissions denied")
@@ -263,7 +263,7 @@ class TurboSongsModule internal constructor(context: ReactApplicationContext) :
   }
 
   @ReactMethod
-  override fun search(options: ReadableMap, promise : Promise) {
+   fun search(options: ReadableMap, promise : Promise) {
 
     if(!hasPermissions()){
       promise.reject("Permissions denied","Permissions denied")
